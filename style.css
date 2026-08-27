@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #29447d;
+    color: #29447d;
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        "Noto Serif JP",
+        serif;
+}
+
+.page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* 大きな紙 */
+.paper {
+    position: absolute;
+
+    width: 85vw;
+    height: 115vh;
+
+    right: -8vw;
+    top: 3vh;
+
+    background: #d9d9d9;
+
+    transform: rotate(-10deg);
+}
+
+/* 大きなタイトル */
+.paper h1 {
+    position: absolute;
+
+    left: -29%;
+    top: 3%;
+
+    margin: 0;
+
+    color: #29447d;
+
+    font-size: clamp(45px, 7vw, 105px);
+    line-height: 1.05;
+    font-weight: bold;
+
+    writing-mode: vertical-rl;
+
+    transform: rotate(25deg);
+}
+
+/* 日付 */
+.event-info {
+    position: absolute;
+
+    right: 8%;
+    top: 18%;
+
+    font-size: clamp(18px, 2.2vw, 30px);
+    font-weight: bold;
+
+    line-height: 1.25;
+
+    transform: rotate(7deg);
+}
+
+.event-info p {
+    margin: 0 0 8px;
+}
+
+/* 本文 */
+.description {
+    position: absolute;
+
+    left: 25%;
+    top: 47%;
+
+    width: 52%;
+
+    font-size: clamp(17px, 2vw, 28px);
+    font-weight: bold;
+
+    line-height: 1.7;
+
+    transform: rotate(12deg);
+}
+
+.description p {
+    margin: 0 0 25px;
+}
+
+/* 左下の小さい文章 */
+.small-text {
+    position: absolute;
+
+    left: 8px;
+    bottom: 20px;
+
+    width: 300px;
+
+    color: #d9d9d9;
+
+    font-size: 14px;
+    line-height: 1.35;
+}
+
+.small-text p {
+    margin: 0 0 18px;
+}
+
+
+/* スマホ */
+@media screen and (max-width: 600px) {
+
+    .paper {
+        width: 105vw;
+        height: 110vh;
+
+        right: -25vw;
+        top: 8vh;
+    }
+
+    .paper h1 {
+        left: -25%;
+        top: 4%;
+
+        font-size: 48px;
+    }
+
+    .event-info {
+        right: 8%;
+        top: 18%;
+
+        font-size: 17px;
+    }
+
+    .description {
+        left: 22%;
+        top: 48%;
+
+        width: 58%;
+
+        font-size: 16px;
+    }
+
+    .small-text {
+        width: 190px;
+
+        font-size: 11px;
+        bottom: 10px;
+    }
+}
