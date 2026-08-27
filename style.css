@@ -22,93 +22,110 @@ body {
 }
 
 
-/* 全体 */
+/* =================================
+   トップページ全体
+   ================================= */
 
 .top-page {
     position: relative;
+
+    width: 100%;
     min-height: 100vh;
+
     overflow: hidden;
 
-    padding: 60px 40px;
+    padding: 30px 52px;
 }
 
 
-/* 学校名 */
-
-.school-name {
-    position: relative;
-    z-index: 5;
-
-    color: #d9d9d9;
-
-    width: 55%;
-}
-
-.school-type {
-    margin: 0;
-
-    font-size: 28px;
-    letter-spacing: 0.2em;
-}
-
-.school-name h1 {
-    margin: 0;
-
-    font-size: clamp(42px, 7vw, 90px);
-    font-weight: normal;
-
-    line-height: 1.15;
-
-    letter-spacing: 0.08em;
-}
-
-.english-name {
-    margin-top: 10px;
-
-    font-family: Georgia, serif;
-
-    font-size: 15px;
-    letter-spacing: 0.2em;
-}
-
-
-/* 灰色の大きな紙 */
-
-/* 灰色の大きな紙 */
+/* =================================
+   灰色の紙
+   ================================= */
 
 .top-page::before {
     content: "";
 
     position: absolute;
 
-    width: 95vw;
-    height: 125vh;
+    z-index: 1;
 
-    right: -15vw;
-    top: 8vh;
+    top: 0;
+    right: 0;
+
+    width: 68%;
+    height: 115%;
 
     background: #d9d9d9;
 
+    /*
+       紙の輪郭
+
+       上：右上から少し斜め
+       左：上から下に向かって大きく蛇行
+       下：画面の外まで続く
+    */
     clip-path: polygon(
-        28% 0%,
+        12% 7%,
         100% 0%,
         100% 100%,
-        8% 100%,
-        0% 88%,
-        10% 72%,
-        22% 62%,
-        27% 48%,
-        25% 32%
+        10% 100%,
+        17% 88%,
+        15% 69%,
+        11% 51%,
+        8% 35%,
+        7% 19%
     );
-
-    transform: rotate(-8deg);
-
-    z-index: 1;
-
-    display: block;
 }
 
-/* メニュー */
+
+/* =================================
+   学校名
+   ================================= */
+
+.school-name {
+    position: relative;
+
+    z-index: 5;
+
+    width: 390px;
+
+    color: #d9d9d9;
+}
+
+.school-type {
+    margin: 0 0 5px;
+
+    font-size: 28px;
+
+    letter-spacing: 0.18em;
+}
+
+.school-name h1 {
+    margin: 0;
+
+    font-size: 68px;
+
+    font-weight: normal;
+
+    line-height: 1.1;
+
+    letter-spacing: 0.12em;
+}
+
+.english-name {
+    margin: 18px 0 0;
+
+    font-family: Georgia, serif;
+
+    font-size: 16px;
+
+    letter-spacing: 0.18em;
+}
+
+
+/* =================================
+   メニュー共通
+   ================================= */
 
 nav {
     position: absolute;
@@ -132,7 +149,8 @@ nav a:visited {
 
 nav a:hover {
     color: #29447d;
-    opacity: 0.6;
+
+    opacity: 0.55;
 }
 
 nav a:active {
@@ -145,23 +163,28 @@ nav a:active {
 .number {
     display: block;
 
+    margin-bottom: 3px;
+
     font-family: Georgia, serif;
 
     font-size: 15px;
-    letter-spacing: 0.15em;
+
+    letter-spacing: 0.2em;
 }
 
 
-/* 日本語タイトル */
+/* 日本語 */
 
 .title {
     display: block;
 
-    font-size: clamp(28px, 4vw, 54px);
+    font-size: 43px;
 
     font-weight: normal;
 
-    line-height: 1.1;
+    line-height: 1.15;
+
+    white-space: nowrap;
 }
 
 
@@ -170,69 +193,98 @@ nav a:active {
 .subtitle {
     display: block;
 
-    margin-top: 3px;
+    margin-top: 5px;
 
     font-family: Georgia, serif;
 
     font-size: 12px;
-    letter-spacing: 0.2em;
+
+    letter-spacing: 0.22em;
 }
 
 
-/* 各メニューの位置 */
+/* =================================
+   メニューの配置
+   ================================= */
+
+
+/* 02 学校案内 */
+
+.school {
+    left: 36%;
+    top: 27%;
+
+    transform: rotate(-4deg);
+}
+
+
+/* 03 校友日誌 */
+
+.diary {
+    left: 49%;
+    top: 43%;
+
+    transform: rotate(5deg);
+}
+
+
+/* 04 図書室 */
+
+.books {
+    left: 64%;
+    top: 58%;
+
+    transform: rotate(7deg);
+}
+
+
+/* 05 語学部 */
+
+.language {
+    left: 39%;
+    top: 72%;
+
+    transform: rotate(7deg);
+}
+
+
+/* 06 校友会 */
+
+.alumni {
+    left: 66%;
+    top: 82%;
+
+    transform: rotate(7deg);
+}
+
+
+/* =================================
+   正門
+   ================================= */
 
 .entrance {
-    left: 10%;
-    top: 42%;
+    left: 7%;
+    top: 43%;
 
     transform: rotate(-18deg);
 }
 
-.school {
-    left: 31%;
-    top: 28%;
-
-    transform: rotate(-12deg);
-}
-
-.diary {
-    left: 48%;
-    top: 42%;
-
-    transform: rotate(8deg);
-}
-
-.books {
-    left: 63%;
-    top: 55%;
-
-    transform: rotate(12deg);
-}
-
-.language {
-    left: 34%;
-    top: 67%;
-
-    transform: rotate(10deg);
-}
-
-.alumni {
-    left: 64%;
-    top: 78%;
-
-    transform: rotate(8deg);
+.entrance .title {
+    font-size: 50px;
 }
 
 
-/* フッター */
+/* =================================
+   フッター
+   ================================= */
 
 footer {
     position: absolute;
 
     z-index: 10;
 
-    left: 40px;
-    bottom: 25px;
+    left: 52px;
+    bottom: 22px;
 
     color: #d9d9d9;
 
@@ -246,82 +298,112 @@ footer p {
 }
 
 
-/* スマートフォン */
+/* =================================
+   スマートフォン
+   ================================= */
 
 @media screen and (max-width: 600px) {
 
     .top-page {
-        padding: 35px 20px;
+        min-height: 100vh;
+
+        padding: 25px 20px;
     }
 
+
+    /* 紙 */
+
+    .top-page::before {
+        width: 80%;
+        height: 115%;
+
+        clip-path: polygon(
+            12% 5%,
+            100% 0%,
+            100% 100%,
+            8% 100%,
+            17% 87%,
+            15% 68%,
+            11% 50%,
+            8% 33%,
+            7% 17%
+        );
+    }
+
+
+    /* 学校名 */
+
     .school-name {
-        width: 90%;
+        width: 260px;
     }
 
     .school-type {
-        font-size: 20px;
+        font-size: 19px;
     }
 
     .school-name h1 {
-        font-size: 42px;
+        font-size: 43px;
     }
 
     .english-name {
-        font-size: 10px;
-    }
+        margin-top: 10px;
 
-    .top-page::before {
-        width: 105vw;
-        height: 110vh;
-
-        right: -30vw;
-        top: 18vh;
-    }
-
-    .title {
-        font-size: 28px;
-    }
-
-    .number {
-        font-size: 11px;
-    }
-
-    .subtitle {
         font-size: 9px;
     }
 
+
+    /* メニュー */
+
+    .number {
+        font-size: 10px;
+    }
+
+    .title {
+        font-size: 27px;
+    }
+
+    .subtitle {
+        font-size: 8px;
+    }
+
+
     .entrance {
-        left: 8%;
-        top: 39%;
+        left: 5%;
+        top: 42%;
     }
 
     .school {
-        left: 34%;
-        top: 29%;
+        left: 30%;
+        top: 28%;
     }
 
     .diary {
-        left: 50%;
+        left: 45%;
         top: 43%;
     }
 
     .books {
-        left: 60%;
-        top: 55%;
+        left: 58%;
+        top: 57%;
     }
 
     .language {
-        left: 25%;
-        top: 66%;
+        left: 29%;
+        top: 71%;
     }
 
     .alumni {
-        left: 58%;
-        top: 77%;
+        left: 59%;
+        top: 82%;
     }
+
+
+    /* フッター */
 
     footer {
         left: 20px;
-        bottom: 15px;
+        bottom: 12px;
+
+        font-size: 10px;
     }
 }
