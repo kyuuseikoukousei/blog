@@ -7,7 +7,7 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
 }
 
 body {
@@ -21,6 +21,11 @@ body {
         serif;
 }
 
+
+/* =================================
+   トップページ
+   ================================= */
+
 .top-page {
     position: relative;
 
@@ -33,9 +38,9 @@ body {
 }
 
 
-/* =========================================
-   見開きの本
-   ========================================= */
+/* =================================
+   開いている本
+   ================================= */
 
 .book {
     position: absolute;
@@ -43,19 +48,29 @@ body {
     z-index: 1;
 
     /*
-       画面の右下に大きく開いた本を置く
+       本全体の大きさ
+    */
+    width: 125vw;
+    height: 78vh;
+
+    /*
+       本の位置
     */
     left: 8vw;
-    top: 8vh;
+    top: 25vh;
 
-    width: 120vw;
-    height: 100vh;
+    /*
+       本全体を斜めにする
+    */
+    transform: rotate(-14deg);
+
+    transform-origin: center center;
 }
 
 
-/* =========================================
+/* =================================
    左ページ
-   ========================================= */
+   ================================= */
 
 .page-left {
     position: absolute;
@@ -63,70 +78,64 @@ body {
     left: 0;
     top: 0;
 
-    width: 58%;
+    width: 50%;
     height: 100%;
 
     background: #d9d9d9;
 
     /*
-       左上から中央の折り目へ向かい、
-       下に向かって少し外側へ広がる形
+       左ページは中央から
+       左下へ広がる形
     */
     clip-path: polygon(
-        42% 0%,
+        4% 8%,
         100% 0%,
         100% 100%,
-        18% 86%,
-        8% 68%,
-        12% 48%,
-        17% 28%
+        8% 88%,
+        0% 75%
     );
 }
 
 
-/* =========================================
+/* =================================
    右ページ
-   ========================================= */
+   ================================= */
 
 .page-right {
     position: absolute;
 
-    left: 48%;
+    right: 0;
     top: 0;
 
-    width: 72%;
+    width: 50%;
     height: 100%;
 
     background: #d9d9d9;
 
     /*
-       左端が本の折り目。
-       右側は画面の外まで伸ばす。
+       右ページは中央から
+       右下へ広がる形
     */
     clip-path: polygon(
         0% 0%,
-        68% 2%,
-        100% 13%,
-        100% 82%,
-        42% 100%,
-        8% 100%
+        96% 8%,
+        100% 75%,
+        92% 88%,
+        0% 100%
     );
 }
 
 
-/* =========================================
-   本の折り目
-   ========================================= */
+/* =================================
+   本の中央・折り目
+   ================================= */
 
 .spine {
     position: absolute;
 
-    z-index: 4;
+    z-index: 3;
 
-    /*
-       左右のページがここで接する
-    */
-    left: 49.2%;
+    left: 50%;
     top: 1%;
 
     width: 4px;
@@ -134,28 +143,25 @@ body {
 
     background: #29447d;
 
-    /*
-       折り目だけを少し斜めにする
-    */
-    transform: rotate(-3deg);
+    transform: translateX(-50%);
 
-    transform-origin: top center;
+    /*
+       折り目は一本だけ
+    */
 }
 
 
-/* =========================================
+/* =================================
    学校名
-   ========================================= */
+   ================================= */
 
 .school-name {
     position: absolute;
 
-    z-index: 10;
+    z-index: 20;
 
     left: 52px;
     top: 28px;
-
-    width: 500px;
 
     color: #d9d9d9;
 }
@@ -164,7 +170,6 @@ body {
     margin: 0;
 
     font-size: 28px;
-
     letter-spacing: 0.15em;
 }
 
@@ -172,12 +177,11 @@ body {
     margin: 5px 0 0;
 
     font-size: 66px;
-
     font-weight: normal;
 
     line-height: 1.1;
 
-    letter-spacing: 0.08em;
+    white-space: nowrap;
 }
 
 .english-name {
@@ -186,19 +190,18 @@ body {
     font-family: Georgia, serif;
 
     font-size: 16px;
-
     letter-spacing: 0.18em;
 }
 
 
-/* =========================================
+/* =================================
    メニュー共通
-   ========================================= */
+   ================================= */
 
 nav {
     position: absolute;
 
-    z-index: 10;
+    z-index: 30;
 }
 
 nav a {
@@ -219,29 +222,36 @@ nav a:hover {
     opacity: 0.55;
 }
 
+nav a:active {
+    color: #29447d;
+}
 
-/* 番号 */
+
+/* =================================
+   番号
+   ================================= */
 
 .number {
     display: block;
+
+    margin-bottom: 2px;
 
     font-family: Georgia, serif;
 
     font-size: 14px;
 
     letter-spacing: 0.2em;
-
-    line-height: 1.2;
 }
 
 
-/* 日本語 */
+/* =================================
+   日本語タイトル
+   ================================= */
 
 .title {
     display: block;
 
     font-size: 42px;
-
     font-weight: normal;
 
     line-height: 1.15;
@@ -250,12 +260,14 @@ nav a:hover {
 }
 
 
-/* 英語 */
+/* =================================
+   英語
+   ================================= */
 
 .subtitle {
     display: block;
 
-    margin-top: 4px;
+    margin-top: 3px;
 
     font-family: Georgia, serif;
 
@@ -265,18 +277,13 @@ nav a:hover {
 }
 
 
-/* =========================================
-   メニュー配置
-
-   ※本の中ではなく、画面上の座標として配置する
-   ========================================= */
-
-
-/* 01 正門 */
+/* =================================
+   01 正門
+   ================================= */
 
 .entrance {
-    left: 6%;
-    top: 40%;
+    left: 7%;
+    top: 43%;
 
     transform: rotate(-18deg);
 }
@@ -286,64 +293,74 @@ nav a:hover {
 }
 
 
-/* 02 学校案内 */
+/* =================================
+   02 学校案内
+   ================================= */
 
 .school {
-    left: 43%;
-    top: 28%;
+    left: 38%;
+    top: 39%;
 
-    transform: rotate(-3deg);
+    transform: rotate(-5deg);
 }
 
 
-/* 03 校友日誌 */
+/* =================================
+   03 校友日誌
+   ================================= */
 
 .diary {
-    left: 55%;
-    top: 45%;
+    left: 53%;
+    top: 51%;
 
-    transform: rotate(4deg);
+    transform: rotate(5deg);
 }
 
 
-/* 04 図書室 */
+/* =================================
+   04 図書室
+   ================================= */
 
 .books {
     left: 67%;
-    top: 59%;
+    top: 63%;
 
-    transform: rotate(6deg);
+    transform: rotate(7deg);
 }
 
 
-/* 05 語学部 */
+/* =================================
+   05 語学部
+   ================================= */
 
 .language {
-    left: 45%;
-    top: 74%;
+    left: 39%;
+    top: 75%;
 
-    transform: rotate(6deg);
+    transform: rotate(7deg);
 }
 
 
-/* 06 校友会 */
+/* =================================
+   06 校友会
+   ================================= */
 
 .alumni {
     left: 68%;
-    top: 84%;
+    top: 83%;
 
-    transform: rotate(6deg);
+    transform: rotate(7deg);
 }
 
 
-/* =========================================
+/* =================================
    フッター
-   ========================================= */
+   ================================= */
 
 footer {
     position: absolute;
 
-    z-index: 20;
+    z-index: 30;
 
     left: 52px;
     bottom: 20px;
@@ -360,9 +377,9 @@ footer p {
 }
 
 
-/* =========================================
+/* =================================
    スマートフォン
-   ========================================= */
+   ================================= */
 
 @media screen and (max-width: 600px) {
 
@@ -372,123 +389,113 @@ footer p {
     }
 
 
-    /* -----------------------------
-       本
-       ----------------------------- */
+    /* 本 */
 
     .book {
-        left: -2vw;
-        top: 32vh;
+        width: 155vw;
+        height: 72vh;
 
-        width: 135vw;
-        height: 78vh;
+        left: -2vw;
+        top: 34vh;
+
+        transform: rotate(-14deg);
     }
 
 
+    /* 左ページ */
+
     .page-left {
-        width: 58%;
-        height: 100%;
+        width: 50%;
 
         clip-path: polygon(
-            42% 0%,
+            5% 8%,
             100% 0%,
             100% 100%,
-            18% 86%,
-            8% 68%,
-            12% 48%,
-            17% 28%
+            10% 88%,
+            0% 75%
         );
     }
 
 
-    .page-right {
-        left: 48%;
+    /* 右ページ */
 
-        width: 72%;
-        height: 100%;
+    .page-right {
+        width: 50%;
 
         clip-path: polygon(
             0% 0%,
-            68% 2%,
-            100% 13%,
-            100% 82%,
-            42% 100%,
-            8% 100%
+            95% 8%,
+            100% 75%,
+            90% 88%,
+            0% 100%
         );
     }
 
 
+    /* 折り目 */
+
     .spine {
-        left: 49.2%;
-
         width: 3px;
-        height: 98%;
-
-        transform: rotate(-3deg);
     }
 
 
-    /* -----------------------------
-       学校名
-       ----------------------------- */
+    /* 学校名 */
 
     .school-name {
-        left: 52px;
+        left: 55px;
         top: 28px;
-
-        width: 330px;
     }
 
     .school-type {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .school-name h1 {
-        font-size: 47px;
+        font-size: 54px;
 
-        line-height: 1.25;
+        white-space: normal;
+
+        max-width: 700px;
     }
 
     .english-name {
-        margin-top: 12px;
+        margin-top: 14px;
 
-        font-size: 10px;
+        font-size: 12px;
     }
 
 
-    /* -----------------------------
-       メニュー
-       ----------------------------- */
+    /* メニュー */
 
     .number {
-        font-size: 10px;
+        font-size: 11px;
     }
 
     .title {
-        font-size: 27px;
+        font-size: 31px;
     }
 
     .subtitle {
-        font-size: 8px;
+        font-size: 9px;
     }
 
 
     /* 01 */
 
     .entrance {
-        left: 4%;
-        top: 43%;
+        left: 7%;
+        top: 49%;
     }
 
     .entrance .title {
-        font-size: 31px;
+        font-size: 36px;
     }
 
 
     /* 02 */
 
     .school {
-        left: 39%;
+        left: 34%;
         top: 43%;
     }
 
@@ -496,7 +503,7 @@ footer p {
     /* 03 */
 
     .diary {
-        left: 52%;
+        left: 51%;
         top: 55%;
     }
 
@@ -504,34 +511,32 @@ footer p {
     /* 04 */
 
     .books {
-        left: 64%;
-        top: 67%;
+        left: 67%;
+        top: 66%;
     }
 
 
     /* 05 */
 
     .language {
-        left: 39%;
-        top: 78%;
+        left: 36%;
+        top: 76%;
     }
 
 
     /* 06 */
 
     .alumni {
-        left: 65%;
-        top: 88%;
+        left: 68%;
+        top: 84%;
     }
 
 
-    /* -----------------------------
-       フッター
-       ----------------------------- */
+    /* footer */
 
     footer {
         left: 20px;
-        bottom: 12px;
+        bottom: 15px;
 
         font-size: 10px;
     }
