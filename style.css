@@ -1,3 +1,10 @@
+clip-path: polygon(
+    82% 3%,
+    100% 14%,
+    77% 100%,
+    11% 74%
+);
+
 * {
     box-sizing: border-box;
 }
