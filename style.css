@@ -74,24 +74,39 @@ body {
 
 /* 灰色の大きな紙 */
 
+/* 灰色の大きな紙 */
+
 .top-page::before {
     content: "";
 
     position: absolute;
 
-    width: 82vw;
+    width: 95vw;
     height: 125vh;
 
-    right: -12vw;
-    top: 12vh;
+    right: -15vw;
+    top: 8vh;
 
     background: #d9d9d9;
 
-    transform: rotate(-10deg);
+    clip-path: polygon(
+        28% 0%,
+        100% 0%,
+        100% 100%,
+        8% 100%,
+        0% 88%,
+        10% 72%,
+        22% 62%,
+        27% 48%,
+        25% 32%
+    );
+
+    transform: rotate(-8deg);
 
     z-index: 1;
-}
 
+    display: block;
+}
 
 /* メニュー */
 
