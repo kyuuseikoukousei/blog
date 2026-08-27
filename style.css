@@ -23,11 +23,6 @@ body {
     overflow: hidden;
 }
 
-
-/* =================================
-   トップページ
-   ================================= */
-
 .top-page {
     position: relative;
 
@@ -49,89 +44,82 @@ body {
 
     z-index: 1;
 
-    width: 125vw;
-    height: 72vh;
+    width: 120vw;
+    height: 62vh;
 
-    left: 18vw;
-    top: 18vh;
+    left: 32vw;
+    top: 32vh;
 
-    transform: rotate(-24deg);
+    transform: rotate(-28deg);
+
+    transform-origin: center center;
 }
 
 
-/* ---------------------------------
+/* =================================
    左ページ
-   --------------------------------- */
+   ================================= */
 
 .page-left {
     position: absolute;
 
-    z-index: 1;
-
     left: 0;
     top: 0;
 
-    width: 51%;
+    width: 50%;
     height: 100%;
 
     background: #d9d9d9;
 
     clip-path: polygon(
-        8% 8%,
-        100% 0%,
-        96% 92%,
-        20% 100%,
-        5% 78%
+        0 8%,
+        94% 0,
+        100% 100%,
+        7% 88%
     );
 }
 
 
-/* ---------------------------------
+/* =================================
    右ページ
-   --------------------------------- */
+   ================================= */
 
 .page-right {
     position: absolute;
 
-    z-index: 1;
-
-    left: 49%;
+    left: 50%;
     top: 0;
 
-    width: 51%;
+    width: 50%;
     height: 100%;
 
     background: #d9d9d9;
 
     clip-path: polygon(
-        0% 0%,
-        91% 8%,
-        100% 25%,
-        100% 82%,
-        15% 100%,
-        4% 20%
+        6% 0,
+        100% 8%,
+        100% 88%,
+        0 100%
     );
 }
 
 
-/* ---------------------------------
+/* =================================
    本の折り目
-   --------------------------------- */
+   ================================= */
 
 .spine {
     position: absolute;
 
-    z-index: 2;
+    z-index: 5;
 
-    left: 49.5%;
-    top: 3%;
+    left: 50%;
+    top: 1%;
 
-    width: 4px;
-    height: 94%;
+    width: 3px;
+    height: 98%;
 
     background: #29447d;
-
-    transform: rotate(2deg);
 }
 
 
@@ -154,7 +142,6 @@ body {
     margin: 0 0 5px;
 
     font-size: 28px;
-
     font-weight: normal;
 
     letter-spacing: 0.18em;
@@ -164,7 +151,6 @@ body {
     margin: 0;
 
     font-size: 66px;
-
     font-weight: normal;
 
     line-height: 1.1;
@@ -189,7 +175,6 @@ body {
 
 nav {
     position: absolute;
-
     z-index: 100;
 }
 
@@ -209,7 +194,6 @@ nav a:visited {
 
 nav a:hover {
     color: #29447d;
-
     opacity: 0.55;
 }
 
@@ -380,15 +364,14 @@ footer p {
 @media screen and (max-width: 600px) {
 
     .book {
-        width: 140vw;
-        height: 68vh;
+        width: 145vw;
+        height: 58vh;
 
-        left: 12vw;
-        top: 23vh;
+        left: 20vw;
+        top: 34vh;
 
-        transform: rotate(-24deg);
+        transform: rotate(-28deg);
     }
-
 
     .school-name {
         left: 25px;
@@ -405,10 +388,8 @@ footer p {
 
     .english-name {
         margin-top: 10px;
-
         font-size: 9px;
     }
-
 
     .number {
         font-size: 10px;
@@ -422,7 +403,6 @@ footer p {
         font-size: 8px;
     }
 
-
     .entrance {
         left: 5%;
         top: 43%;
@@ -431,7 +411,6 @@ footer p {
     .entrance .title {
         font-size: 32px;
     }
-
 
     .school {
         left: 30%;
@@ -458,11 +437,9 @@ footer p {
         top: 82%;
     }
 
-
     footer {
         left: 20px;
         bottom: 12px;
-
         font-size: 10px;
     }
 }
