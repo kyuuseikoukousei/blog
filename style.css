@@ -1,453 +1,111 @@
+@charset "UTF-8";
+
+/* 全体設定 */
 * {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background: #29447d;
-    color: #29447d;
-
-    font-family:
-        "Yu Mincho",
-        "Hiragino Mincho ProN",
-        "Noto Serif JP",
-        serif;
+  background-color: #1a365d; /* 濃い紺色 */
+  color: #ffffff;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif; /* 落ち着いた明朝体 */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
+  overflow-x: hidden;
+  position: relative;
 }
 
-
-/* =================================
-   トップページ
-   ================================= */
-
-.top-page {
-    position: relative;
-
-    width: 100vw;
-    height: 100vh;
-
-    overflow: hidden;
-
-    background: #29447d;
+/* サイトタイトルエリア */
+header {
+  z-index: 2;
 }
 
-
-/* =================================
-   開いている本
-   ================================= */
-
-.book {
-    position: absolute;
-
-    z-index: 1;
-
-    width: 120vw;
-    height: 62vh;
-
-    left: -10vw;
-    top: 39vh;
-
-    transform: rotate(-12deg);
-    transform-origin: center center;
+h1 {
+  font-size: 2.8rem;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
 }
-
-
-/* =================================
-   左ページ
-   ================================= */
-
-.page-left {
-    position: absolute;
-
-    left: 0;
-    top: 0;
-
-    width: 50%;
-    height: 100%;
-
-    background: #d9d9d9;
-
-    border-radius: 2px 0 0 2px;
-}
-
-
-/* =================================
-   右ページ
-   ================================= */
-
-.page-right {
-    position: absolute;
-
-    right: 0;
-    top: 0;
-
-    width: 50%;
-    height: 100%;
-
-    background: #d9d9d9;
-
-    border-radius: 0 2px 2px 0;
-}
-
-
-/* =================================
-   本の折り目
-   ================================= */
-
-.spine {
-    position: absolute;
-
-    z-index: 3;
-
-    left: 50%;
-    top: 0;
-
-    width: 5px;
-    height: 100%;
-
-    background: #29447d;
-
-    transform: translateX(-50%);
-}
-
-
-/* =================================
-   学校名
-   ================================= */
-
-.school-name {
-    position: absolute;
-
-    z-index: 20;
-
-    left: 52px;
-    top: 28px;
-
-    color: #d9d9d9;
-}
-
-.school-type {
-    margin: 0;
-
-    font-size: 28px;
-    letter-spacing: 0.15em;
-}
-
-.school-name h1 {
-    margin: 5px 0 0;
-
-    font-size: 66px;
-    font-weight: normal;
-
-    line-height: 1.1;
-
-    white-space: nowrap;
-}
-
-.english-name {
-    margin: 18px 0 0;
-
-    font-family: Georgia, serif;
-
-    font-size: 16px;
-    letter-spacing: 0.18em;
-}
-
-
-/* =================================
-   メニュー
-   ================================= */
-
-nav {
-    position: absolute;
-    z-index: 30;
-}
-
-nav a {
-    display: block;
-
-    color: #29447d;
-
-    text-decoration: none;
-}
-
-nav a:visited {
-    color: #29447d;
-}
-
-nav a:hover {
-    color: #29447d;
-    opacity: 0.55;
-}
-
-nav a:active {
-    color: #29447d;
-}
-
-
-/* 番号 */
-
-.number {
-    display: block;
-
-    margin-bottom: 2px;
-
-    font-family: Georgia, serif;
-
-    font-size: 14px;
-
-    letter-spacing: 0.2em;
-}
-
-
-/* 日本語 */
-
-.title {
-    display: block;
-
-    font-size: 42px;
-    font-weight: normal;
-
-    line-height: 1.15;
-
-    white-space: nowrap;
-}
-
-
-/* 英語 */
 
 .subtitle {
-    display: block;
-
-    margin-top: 3px;
-
-    font-family: Georgia, serif;
-
-    font-size: 12px;
-
-    letter-spacing: 0.2em;
+  font-size: 1.1rem;
+  opacity: 0.9;
+  letter-spacing: 0.15em;
 }
 
-
-/* =================================
-   01 正門
-   ================================= */
-
-.entrance {
-    left: 8%;
-    top: 49%;
-
-    transform: rotate(-8deg);
+/* 中央の「本（薄い灰色）」エリア */
+.book-container {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  width: 480px;
+  height: 640px;
+  background-color: #f0f0f0; /* 薄い灰色 */
+  color: #1a365d;
+  padding: 50px 40px;
+  
+  /* 斜め配置と立体感（ページの厚み表現） */
+  transform: translate(-50%, -40%) rotate(-25deg);
+  box-shadow: 
+    -10px 10px 25px rgba(0, 0, 0, 0.4),
+    -3px 3px 0px #e0e0e0,
+    -6px 6px 0px #d5d5d5,
+    -9px 9px 0px #cccccc; /* 本の重なり風シャドウ */
+  
+  border-radius: 4px 12px 12px 4px;
+  z-index: 1;
 }
 
-.entrance .title {
-    font-size: 48px;
+/* 校章風マーク */
+.emblem {
+  text-align: right;
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  padding-right: 10px;
+  opacity: 0.8;
 }
 
-
-/* =================================
-   02 学校案内
-   ================================= */
-
-.school {
-    left: 37%;
-    top: 49%;
-
-    transform: rotate(-5deg);
+/* ナビゲーションメニュー */
+.menu-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding-left: 20px;
 }
 
-
-/* =================================
-   03 校友日誌
-   ================================= */
-
-.diary {
-    left: 53%;
-    top: 58%;
-
-    transform: rotate(4deg);
+.menu-list li a {
+  color: #1a365d;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s, opacity 0.2s;
 }
 
-
-/* =================================
-   04 図書室
-   ================================= */
-
-.books {
-    left: 68%;
-    top: 68%;
-
-    transform: rotate(6deg);
+.menu-list li a:hover {
+  opacity: 0.7;
+  transform: translateX(5px);
 }
 
-
-/* =================================
-   05 語学部
-   ================================= */
-
-.language {
-    left: 38%;
-    top: 76%;
-
-    transform: rotate(6deg);
+.menu-list .note {
+  font-size: 0.9rem;
+  font-weight: normal;
+  margin-left: 8px;
+  opacity: 0.8;
 }
 
-
-/* =================================
-   06 校友会
-   ================================= */
-
-.alumni {
-    left: 68%;
-    top: 83%;
-
-    transform: rotate(6deg);
-}
-
-
-/* =================================
-   フッター
-   ================================= */
-
+/* フッター */
 footer {
-    position: absolute;
-
-    z-index: 40;
-
-    left: 52px;
-    bottom: 20px;
-
-    color: #d9d9d9;
-
-    font-size: 12px;
-
-    line-height: 1.4;
+  z-index: 2;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  opacity: 0.8;
 }
 
-footer p {
-    margin: 0;
-}
-
-
-/* =================================
-   スマートフォン
-   ================================= */
-
-@media screen and (max-width: 600px) {
-
-    .book {
-        width: 125vw;
-        height: 55vh;
-
-        left: -12vw;
-        top: 43vh;
-
-        transform: rotate(-12deg);
-    }
-
-
-    .school-name {
-        left: 55px;
-        top: 28px;
-    }
-
-    .school-type {
-        font-size: 22px;
-    }
-
-    .school-name h1 {
-        font-size: 54px;
-        line-height: 1.2;
-        white-space: normal;
-        max-width: 650px;
-    }
-
-    .english-name {
-        margin-top: 14px;
-        font-size: 12px;
-    }
-
-
-    .number {
-        font-size: 11px;
-    }
-
-    .title {
-        font-size: 31px;
-    }
-
-    .subtitle {
-        font-size: 9px;
-    }
-
-
-    /* 01 */
-
-    .entrance {
-        left: 7%;
-        top: 52%;
-        transform: rotate(-8deg);
-    }
-
-    .entrance .title {
-        font-size: 36px;
-    }
-
-
-    /* 02 */
-
-    .school {
-        left: 32%;
-        top: 51%;
-        transform: rotate(-5deg);
-    }
-
-
-    /* 03 */
-
-    .diary {
-        left: 51%;
-        top: 60%;
-        transform: rotate(4deg);
-    }
-
-
-    /* 04 */
-
-    .books {
-        left: 67%;
-        top: 69%;
-        transform: rotate(6deg);
-    }
-
-
-    /* 05 */
-
-    .language {
-        left: 35%;
-        top: 78%;
-        transform: rotate(6deg);
-    }
-
-
-    /* 06 */
-
-    .alumni {
-        left: 68%;
-        top: 85%;
-        transform: rotate(6deg);
-    }
-
-
-    footer {
-        left: 20px;
-        bottom: 15px;
-        font-size: 10px;
-    }
-}
