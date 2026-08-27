@@ -11,153 +11,302 @@ body {
 body {
     background: #29447d;
     color: #29447d;
+
     font-family:
         "Yu Mincho",
         "Hiragino Mincho ProN",
         "Noto Serif JP",
         serif;
+
+    line-height: 1.8;
 }
 
-.page {
+
+/* 全体 */
+
+.top-page {
     position: relative;
-    width: 100%;
     min-height: 100vh;
     overflow: hidden;
+
+    padding: 60px 40px;
 }
 
-/* 大きな紙 */
-.paper {
+
+/* 学校名 */
+
+.school-name {
+    position: relative;
+    z-index: 5;
+
+    color: #d9d9d9;
+
+    width: 55%;
+}
+
+.school-type {
+    margin: 0;
+
+    font-size: 28px;
+    letter-spacing: 0.2em;
+}
+
+.school-name h1 {
+    margin: 0;
+
+    font-size: clamp(42px, 7vw, 90px);
+    font-weight: normal;
+
+    line-height: 1.15;
+
+    letter-spacing: 0.08em;
+}
+
+.english-name {
+    margin-top: 10px;
+
+    font-family: Georgia, serif;
+
+    font-size: 15px;
+    letter-spacing: 0.2em;
+}
+
+
+/* 灰色の大きな紙 */
+
+.top-page::before {
+    content: "";
+
     position: absolute;
 
-    width: 85vw;
-    height: 115vh;
+    width: 82vw;
+    height: 125vh;
 
-    right: -8vw;
-    top: 3vh;
+    right: -12vw;
+    top: 12vh;
 
     background: #d9d9d9;
 
     transform: rotate(-10deg);
+
+    z-index: 1;
 }
 
-/* 大きなタイトル */
-.paper h1 {
+
+/* メニュー */
+
+nav {
     position: absolute;
 
-    left: -29%;
-    top: 3%;
+    z-index: 5;
+}
 
-    margin: 0;
+nav a {
+    display: block;
 
     color: #29447d;
 
-    font-size: clamp(45px, 7vw, 105px);
-    line-height: 1.05;
-    font-weight: bold;
+    text-decoration: none;
 
-    writing-mode: vertical-rl;
-
-    transform: rotate(25deg);
+    transition: opacity 0.2s ease;
 }
 
-/* 日付 */
-.event-info {
-    position: absolute;
-
-    right: 8%;
-    top: 18%;
-
-    font-size: clamp(18px, 2.2vw, 30px);
-    font-weight: bold;
-
-    line-height: 1.25;
-
-    transform: rotate(7deg);
+nav a:visited {
+    color: #29447d;
 }
 
-.event-info p {
-    margin: 0 0 8px;
+nav a:hover {
+    color: #29447d;
+    opacity: 0.6;
 }
 
-/* 本文 */
-.description {
-    position: absolute;
+nav a:active {
+    color: #29447d;
+}
 
-    left: 25%;
-    top: 47%;
 
-    width: 52%;
+/* 番号 */
 
-    font-size: clamp(17px, 2vw, 28px);
-    font-weight: bold;
+.number {
+    display: block;
 
-    line-height: 1.7;
+    font-family: Georgia, serif;
+
+    font-size: 15px;
+    letter-spacing: 0.15em;
+}
+
+
+/* 日本語タイトル */
+
+.title {
+    display: block;
+
+    font-size: clamp(28px, 4vw, 54px);
+
+    font-weight: normal;
+
+    line-height: 1.1;
+}
+
+
+/* 英語 */
+
+.subtitle {
+    display: block;
+
+    margin-top: 3px;
+
+    font-family: Georgia, serif;
+
+    font-size: 12px;
+    letter-spacing: 0.2em;
+}
+
+
+/* 各メニューの位置 */
+
+.entrance {
+    left: 10%;
+    top: 42%;
+
+    transform: rotate(-18deg);
+}
+
+.school {
+    left: 31%;
+    top: 28%;
+
+    transform: rotate(-12deg);
+}
+
+.diary {
+    left: 48%;
+    top: 42%;
+
+    transform: rotate(8deg);
+}
+
+.books {
+    left: 63%;
+    top: 55%;
 
     transform: rotate(12deg);
 }
 
-.description p {
-    margin: 0 0 25px;
+.language {
+    left: 34%;
+    top: 67%;
+
+    transform: rotate(10deg);
 }
 
-/* 左下の小さい文章 */
-.small-text {
+.alumni {
+    left: 64%;
+    top: 78%;
+
+    transform: rotate(8deg);
+}
+
+
+/* フッター */
+
+footer {
     position: absolute;
 
-    left: 8px;
-    bottom: 20px;
+    z-index: 10;
 
-    width: 300px;
+    left: 40px;
+    bottom: 25px;
 
     color: #d9d9d9;
 
-    font-size: 14px;
-    line-height: 1.35;
+    font-size: 12px;
+
+    line-height: 1.4;
 }
 
-.small-text p {
-    margin: 0 0 18px;
+footer p {
+    margin: 0;
 }
 
 
-/* スマホ */
+/* スマートフォン */
+
 @media screen and (max-width: 600px) {
 
-    .paper {
+    .top-page {
+        padding: 35px 20px;
+    }
+
+    .school-name {
+        width: 90%;
+    }
+
+    .school-type {
+        font-size: 20px;
+    }
+
+    .school-name h1 {
+        font-size: 42px;
+    }
+
+    .english-name {
+        font-size: 10px;
+    }
+
+    .top-page::before {
         width: 105vw;
         height: 110vh;
 
-        right: -25vw;
-        top: 8vh;
+        right: -30vw;
+        top: 18vh;
     }
 
-    .paper h1 {
-        left: -25%;
-        top: 4%;
-
-        font-size: 48px;
+    .title {
+        font-size: 28px;
     }
 
-    .event-info {
-        right: 8%;
-        top: 18%;
-
-        font-size: 17px;
-    }
-
-    .description {
-        left: 22%;
-        top: 48%;
-
-        width: 58%;
-
-        font-size: 16px;
-    }
-
-    .small-text {
-        width: 190px;
-
+    .number {
         font-size: 11px;
-        bottom: 10px;
+    }
+
+    .subtitle {
+        font-size: 9px;
+    }
+
+    .entrance {
+        left: 8%;
+        top: 39%;
+    }
+
+    .school {
+        left: 34%;
+        top: 29%;
+    }
+
+    .diary {
+        left: 50%;
+        top: 43%;
+    }
+
+    .books {
+        left: 60%;
+        top: 55%;
+    }
+
+    .language {
+        left: 25%;
+        top: 66%;
+    }
+
+    .alumni {
+        left: 58%;
+        top: 77%;
+    }
+
+    footer {
+        left: 20px;
+        bottom: 15px;
     }
 }
