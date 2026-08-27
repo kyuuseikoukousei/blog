@@ -19,8 +19,6 @@ body {
         "Hiragino Mincho ProN",
         "Noto Serif JP",
         serif;
-
-    overflow: hidden;
 }
 
 .top-page {
@@ -35,30 +33,36 @@ body {
 }
 
 
-/* =================================
+/* ========================================
    見開きの本
-   ================================= */
+   ======================================== */
 
 .book {
     position: absolute;
 
     z-index: 1;
 
+    /*
+       本そのものを大きく横長にする
+    */
     width: 120vw;
-    height: 62vh;
+    height: 82vh;
 
-    left: 32vw;
-    top: 32vh;
+    left: 18vw;
+    top: 24vh;
 
-    transform: rotate(-28deg);
+    /*
+       本全体を斜めにする
+    */
+    transform: rotate(-16deg);
 
     transform-origin: center center;
 }
 
 
-/* =================================
+/* ========================================
    左ページ
-   ================================= */
+   ======================================== */
 
 .page-left {
     position: absolute;
@@ -71,23 +75,29 @@ body {
 
     background: #d9d9d9;
 
+    /*
+       本の左ページ。
+       基本は四角形に近くして、
+       外側だけ少し紙らしくする。
+    */
     clip-path: polygon(
-        0 8%,
-        94% 0,
-        100% 100%,
-        7% 88%
+        5% 3%,
+        98% 0%,
+        100% 96%,
+        8% 100%,
+        2% 88%
     );
 }
 
 
-/* =================================
+/* ========================================
    右ページ
-   ================================= */
+   ======================================== */
 
 .page-right {
     position: absolute;
 
-    left: 50%;
+    right: 0;
     top: 0;
 
     width: 50%;
@@ -96,41 +106,45 @@ body {
     background: #d9d9d9;
 
     clip-path: polygon(
-        6% 0,
-        100% 8%,
-        100% 88%,
-        0 100%
+        2% 0%,
+        95% 4%,
+        100% 12%,
+        100% 90%,
+        91% 100%,
+        2% 96%
     );
 }
 
 
-/* =================================
-   本の折り目
-   ================================= */
+/* ========================================
+   本の中央・折り目
+   ======================================== */
 
 .spine {
     position: absolute;
 
-    z-index: 5;
+    z-index: 3;
 
     left: 50%;
     top: 1%;
 
-    width: 3px;
+    width: 5px;
     height: 98%;
 
     background: #29447d;
+
+    transform: translateX(-50%);
 }
 
 
-/* =================================
+/* ========================================
    学校名
-   ================================= */
+   ======================================== */
 
 .school-name {
     position: absolute;
 
-    z-index: 100;
+    z-index: 10;
 
     left: 52px;
     top: 28px;
@@ -139,23 +153,23 @@ body {
 }
 
 .school-type {
-    margin: 0 0 5px;
+    margin: 0;
 
     font-size: 28px;
-    font-weight: normal;
 
-    letter-spacing: 0.18em;
+    letter-spacing: 0.15em;
 }
 
 .school-name h1 {
-    margin: 0;
+    margin: 5px 0 0;
 
     font-size: 66px;
+
     font-weight: normal;
 
     line-height: 1.1;
 
-    letter-spacing: 0.12em;
+    letter-spacing: 0.08em;
 }
 
 .english-name {
@@ -169,13 +183,14 @@ body {
 }
 
 
-/* =================================
-   ナビゲーション
-   ================================= */
+/* ========================================
+   メニュー
+   ======================================== */
 
 nav {
     position: absolute;
-    z-index: 100;
+
+    z-index: 10;
 }
 
 nav a {
@@ -184,8 +199,6 @@ nav a {
     color: #29447d;
 
     text-decoration: none;
-
-    transition: opacity 0.2s ease;
 }
 
 nav a:visited {
@@ -194,36 +207,25 @@ nav a:visited {
 
 nav a:hover {
     color: #29447d;
+
     opacity: 0.55;
 }
 
-nav a:active {
-    color: #29447d;
-}
 
-
-/* =================================
-   番号
-   ================================= */
+/* 番号 */
 
 .number {
     display: block;
-
-    margin-bottom: 2px;
 
     font-family: Georgia, serif;
 
     font-size: 14px;
 
-    line-height: 1;
-
     letter-spacing: 0.2em;
 }
 
 
-/* =================================
-   日本語タイトル
-   ================================= */
+/* 日本語タイトル */
 
 .title {
     display: block;
@@ -238,32 +240,31 @@ nav a:active {
 }
 
 
-/* =================================
-   英語タイトル
-   ================================= */
+/* 英語タイトル */
 
 .subtitle {
     display: block;
 
-    margin-top: 5px;
+    margin-top: 3px;
 
     font-family: Georgia, serif;
 
     font-size: 12px;
 
-    line-height: 1;
-
-    letter-spacing: 0.22em;
+    letter-spacing: 0.2em;
 }
 
 
-/* =================================
-   01 正門
-   ================================= */
+/* ========================================
+   メニュー配置
+   ======================================== */
+
+
+/* 01 正門 */
 
 .entrance {
     left: 7%;
-    top: 43%;
+    top: 42%;
 
     transform: rotate(-18deg);
 }
@@ -273,74 +274,64 @@ nav a:active {
 }
 
 
-/* =================================
-   02 学校案内
-   ================================= */
+/* 02 学校案内 */
 
 .school {
-    left: 37%;
-    top: 28%;
+    left: 38%;
+    top: 36%;
 
-    transform: rotate(-5deg);
+    transform: rotate(-4deg);
 }
 
 
-/* =================================
-   03 校友日誌
-   ================================= */
+/* 03 校友日誌 */
 
 .diary {
-    left: 51%;
-    top: 44%;
+    left: 53%;
+    top: 49%;
 
-    transform: rotate(5deg);
+    transform: rotate(4deg);
 }
 
 
-/* =================================
-   04 図書室
-   ================================= */
+/* 04 図書室 */
 
 .books {
-    left: 65%;
-    top: 59%;
+    left: 67%;
+    top: 63%;
 
     transform: rotate(7deg);
 }
 
 
-/* =================================
-   05 語学部
-   ================================= */
+/* 05 語学部 */
 
 .language {
-    left: 39%;
-    top: 73%;
+    left: 42%;
+    top: 77%;
 
     transform: rotate(7deg);
 }
 
 
-/* =================================
-   06 校友会
-   ================================= */
+/* 06 校友会 */
 
 .alumni {
-    left: 66%;
-    top: 83%;
+    left: 68%;
+    top: 87%;
 
     transform: rotate(7deg);
 }
 
 
-/* =================================
+/* ========================================
    フッター
-   ================================= */
+   ======================================== */
 
 footer {
     position: absolute;
 
-    z-index: 100;
+    z-index: 20;
 
     left: 52px;
     bottom: 20px;
@@ -357,39 +348,100 @@ footer p {
 }
 
 
-/* =================================
+/* ========================================
    スマートフォン
-   ================================= */
+   ======================================== */
 
 @media screen and (max-width: 600px) {
 
-    .book {
-        width: 145vw;
-        height: 58vh;
-
-        left: 20vw;
-        top: 34vh;
-
-        transform: rotate(-28deg);
+    .top-page {
+        width: 100vw;
+        height: 100vh;
     }
 
+
+    /* ------------------------------
+       本
+       ------------------------------ */
+
+    .book {
+        width: 125vw;
+        height: 72vh;
+
+        left: 18vw;
+        top: 39vh;
+
+        transform: rotate(-17deg);
+    }
+
+
+    .page-left {
+        width: 50%;
+        height: 100%;
+
+        clip-path: polygon(
+            5% 3%,
+            98% 0%,
+            100% 96%,
+            8% 100%,
+            2% 88%
+        );
+    }
+
+
+    .page-right {
+        width: 50%;
+        height: 100%;
+
+        clip-path: polygon(
+            2% 0%,
+            95% 4%,
+            100% 12%,
+            100% 90%,
+            91% 100%,
+            2% 96%
+        );
+    }
+
+
+    .spine {
+        left: 50%;
+
+        width: 3px;
+    }
+
+
+    /* ------------------------------
+       学校名
+       ------------------------------ */
+
     .school-name {
-        left: 25px;
-        top: 22px;
+        left: 52px;
+        top: 28px;
     }
 
     .school-type {
-        font-size: 19px;
+        font-size: 20px;
     }
 
     .school-name h1 {
-        font-size: 43px;
+        font-size: 48px;
+
+        line-height: 1.25;
     }
 
     .english-name {
-        margin-top: 10px;
-        font-size: 9px;
+        margin-top: 12px;
+
+        font-size: 10px;
+
+        letter-spacing: 0.18em;
     }
+
+
+    /* ------------------------------
+       メニュー
+       ------------------------------ */
 
     .number {
         font-size: 10px;
@@ -403,43 +455,67 @@ footer p {
         font-size: 8px;
     }
 
+
+    /* 01 */
+
     .entrance {
         left: 5%;
         top: 43%;
     }
 
     .entrance .title {
-        font-size: 32px;
+        font-size: 31px;
     }
+
+
+    /* 02 */
 
     .school {
-        left: 30%;
-        top: 29%;
+        left: 35%;
+        top: 50%;
     }
+
+
+    /* 03 */
 
     .diary {
-        left: 45%;
-        top: 44%;
+        left: 49%;
+        top: 61%;
     }
+
+
+    /* 04 */
 
     .books {
-        left: 58%;
-        top: 58%;
-    }
-
-    .language {
-        left: 29%;
+        left: 61%;
         top: 72%;
     }
 
-    .alumni {
-        left: 59%;
+
+    /* 05 */
+
+    .language {
+        left: 32%;
         top: 82%;
     }
+
+
+    /* 06 */
+
+    .alumni {
+        left: 59%;
+        top: 91%;
+    }
+
+
+    /* ------------------------------
+       フッター
+       ------------------------------ */
 
     footer {
         left: 20px;
         bottom: 12px;
+
         font-size: 10px;
     }
 }
