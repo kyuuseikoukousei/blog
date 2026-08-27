@@ -46,16 +46,30 @@ body {
     content: "";
 
     position: absolute;
-
     z-index: 1;
 
     top: 0;
     right: 0;
 
-    width: 68%;
-    height: 115%;
+    width: 100%;
+    height: 100%;
 
     background: #d9d9d9;
+
+    clip-path: polygon(
+        55% 0%,
+        100% 0%,
+        100% 100%,
+        52% 100%,
+        45% 94%,
+        15% 72%,
+        12% 68%,
+        45% 49%,
+        51% 37%,
+        53% 20%,
+        53% 8%
+    );
+}
 
     /*
        紙の輪郭
