@@ -39,20 +39,21 @@ body {
 
 .book {
     position: absolute;
-
     z-index: 1;
 
-    width: 105vw;
-    height: 88vh;
+    width: 110vw;
+    height: 75vh;
 
-    left: 18vw;
-    top: 7vh;
+    left: 25vw;
+    top: 20vh;
 
-    transform: rotate(-8deg);
+    transform: rotate(-25deg);
 }
 
 
-/* 左ページ */
+/* =========================
+   左ページ
+   ========================= */
 
 .page-left {
     position: absolute;
@@ -60,22 +61,24 @@ body {
     left: 0;
     top: 0;
 
-    width: 52%;
+    width: 50%;
     height: 100%;
 
     background: #d9d9d9;
 
     clip-path: polygon(
-        8% 5%,
-        100% 0%,
-        91% 100%,
-        14% 82%,
-        5% 70%
+        0% 8%,
+        96% 0%,
+        100% 96%,
+        12% 78%,
+        4% 65%
     );
 }
 
 
-/* 右ページ */
+/* =========================
+   右ページ
+   ========================= */
 
 .page-right {
     position: absolute;
@@ -83,22 +86,24 @@ body {
     right: 0;
     top: 0;
 
-    width: 52%;
+    width: 50%;
     height: 100%;
 
     background: #d9d9d9;
 
     clip-path: polygon(
-        0% 0%,
-        93% 5%,
-        100% 15%,
-        100% 78%,
-        7% 100%
+        4% 0%,
+        100% 8%,
+        100% 72%,
+        88% 82%,
+        0% 100%
     );
 }
 
 
-/* 本の中央 */
+/* =========================
+   本の中央・折り目
+   ========================= */
 
 .spine {
     position: absolute;
@@ -108,12 +113,12 @@ body {
     left: 50%;
     top: 1%;
 
-    width: 5px;
+    width: 4px;
     height: 98%;
 
     background: #29447d;
 
-    transform: rotate(2deg);
+    transform: rotate(0deg);
 }
 
 
