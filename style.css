@@ -7,7 +7,7 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
-    min-height: 100%;
+    height: 100%;
 }
 
 body {
@@ -47,23 +47,13 @@ body {
 
     z-index: 1;
 
-    /*
-       本全体の大きさ
-    */
-    width: 125vw;
-    height: 78vh;
+    width: 120vw;
+    height: 62vh;
 
-    /*
-       本の位置
-    */
-    left: 8vw;
-    top: 25vh;
+    left: -10vw;
+    top: 39vh;
 
-    /*
-       本全体を斜めにする
-    */
-    transform: rotate(-14deg);
-
+    transform: rotate(-12deg);
     transform-origin: center center;
 }
 
@@ -83,17 +73,7 @@ body {
 
     background: #d9d9d9;
 
-    /*
-       左ページは中央から
-       左下へ広がる形
-    */
-    clip-path: polygon(
-        4% 8%,
-        100% 0%,
-        100% 100%,
-        8% 88%,
-        0% 75%
-    );
+    border-radius: 2px 0 0 2px;
 }
 
 
@@ -112,22 +92,12 @@ body {
 
     background: #d9d9d9;
 
-    /*
-       右ページは中央から
-       右下へ広がる形
-    */
-    clip-path: polygon(
-        0% 0%,
-        96% 8%,
-        100% 75%,
-        92% 88%,
-        0% 100%
-    );
+    border-radius: 0 2px 2px 0;
 }
 
 
 /* =================================
-   本の中央・折り目
+   本の折り目
    ================================= */
 
 .spine {
@@ -136,18 +106,14 @@ body {
     z-index: 3;
 
     left: 50%;
-    top: 1%;
+    top: 0;
 
-    width: 4px;
-    height: 98%;
+    width: 5px;
+    height: 100%;
 
     background: #29447d;
 
     transform: translateX(-50%);
-
-    /*
-       折り目は一本だけ
-    */
 }
 
 
@@ -195,12 +161,11 @@ body {
 
 
 /* =================================
-   メニュー共通
+   メニュー
    ================================= */
 
 nav {
     position: absolute;
-
     z-index: 30;
 }
 
@@ -218,7 +183,6 @@ nav a:visited {
 
 nav a:hover {
     color: #29447d;
-
     opacity: 0.55;
 }
 
@@ -227,9 +191,7 @@ nav a:active {
 }
 
 
-/* =================================
-   番号
-   ================================= */
+/* 番号 */
 
 .number {
     display: block;
@@ -244,9 +206,7 @@ nav a:active {
 }
 
 
-/* =================================
-   日本語タイトル
-   ================================= */
+/* 日本語 */
 
 .title {
     display: block;
@@ -260,9 +220,7 @@ nav a:active {
 }
 
 
-/* =================================
-   英語
-   ================================= */
+/* 英語 */
 
 .subtitle {
     display: block;
@@ -282,10 +240,10 @@ nav a:active {
    ================================= */
 
 .entrance {
-    left: 7%;
-    top: 43%;
+    left: 8%;
+    top: 49%;
 
-    transform: rotate(-18deg);
+    transform: rotate(-8deg);
 }
 
 .entrance .title {
@@ -298,8 +256,8 @@ nav a:active {
    ================================= */
 
 .school {
-    left: 38%;
-    top: 39%;
+    left: 37%;
+    top: 49%;
 
     transform: rotate(-5deg);
 }
@@ -311,9 +269,9 @@ nav a:active {
 
 .diary {
     left: 53%;
-    top: 51%;
+    top: 58%;
 
-    transform: rotate(5deg);
+    transform: rotate(4deg);
 }
 
 
@@ -322,10 +280,10 @@ nav a:active {
    ================================= */
 
 .books {
-    left: 67%;
-    top: 63%;
+    left: 68%;
+    top: 68%;
 
-    transform: rotate(7deg);
+    transform: rotate(6deg);
 }
 
 
@@ -334,10 +292,10 @@ nav a:active {
    ================================= */
 
 .language {
-    left: 39%;
-    top: 75%;
+    left: 38%;
+    top: 76%;
 
-    transform: rotate(7deg);
+    transform: rotate(6deg);
 }
 
 
@@ -349,7 +307,7 @@ nav a:active {
     left: 68%;
     top: 83%;
 
-    transform: rotate(7deg);
+    transform: rotate(6deg);
 }
 
 
@@ -360,7 +318,7 @@ nav a:active {
 footer {
     position: absolute;
 
-    z-index: 30;
+    z-index: 40;
 
     left: 52px;
     bottom: 20px;
@@ -383,63 +341,16 @@ footer p {
 
 @media screen and (max-width: 600px) {
 
-    .top-page {
-        width: 100vw;
-        height: 100vh;
-    }
-
-
-    /* 本 */
-
     .book {
-        width: 155vw;
-        height: 72vh;
+        width: 125vw;
+        height: 55vh;
 
-        left: -2vw;
-        top: 34vh;
+        left: -12vw;
+        top: 43vh;
 
-        transform: rotate(-14deg);
+        transform: rotate(-12deg);
     }
 
-
-    /* 左ページ */
-
-    .page-left {
-        width: 50%;
-
-        clip-path: polygon(
-            5% 8%,
-            100% 0%,
-            100% 100%,
-            10% 88%,
-            0% 75%
-        );
-    }
-
-
-    /* 右ページ */
-
-    .page-right {
-        width: 50%;
-
-        clip-path: polygon(
-            0% 0%,
-            95% 8%,
-            100% 75%,
-            90% 88%,
-            0% 100%
-        );
-    }
-
-
-    /* 折り目 */
-
-    .spine {
-        width: 3px;
-    }
-
-
-    /* 学校名 */
 
     .school-name {
         left: 55px;
@@ -452,20 +363,16 @@ footer p {
 
     .school-name h1 {
         font-size: 54px;
-
+        line-height: 1.2;
         white-space: normal;
-
-        max-width: 700px;
+        max-width: 650px;
     }
 
     .english-name {
         margin-top: 14px;
-
         font-size: 12px;
     }
 
-
-    /* メニュー */
 
     .number {
         font-size: 11px;
@@ -484,7 +391,8 @@ footer p {
 
     .entrance {
         left: 7%;
-        top: 49%;
+        top: 52%;
+        transform: rotate(-8deg);
     }
 
     .entrance .title {
@@ -495,8 +403,9 @@ footer p {
     /* 02 */
 
     .school {
-        left: 34%;
-        top: 43%;
+        left: 32%;
+        top: 51%;
+        transform: rotate(-5deg);
     }
 
 
@@ -504,7 +413,8 @@ footer p {
 
     .diary {
         left: 51%;
-        top: 55%;
+        top: 60%;
+        transform: rotate(4deg);
     }
 
 
@@ -512,15 +422,17 @@ footer p {
 
     .books {
         left: 67%;
-        top: 66%;
+        top: 69%;
+        transform: rotate(6deg);
     }
 
 
     /* 05 */
 
     .language {
-        left: 36%;
-        top: 76%;
+        left: 35%;
+        top: 78%;
+        transform: rotate(6deg);
     }
 
 
@@ -528,16 +440,14 @@ footer p {
 
     .alumni {
         left: 68%;
-        top: 84%;
+        top: 85%;
+        transform: rotate(6deg);
     }
 
-
-    /* footer */
 
     footer {
         left: 20px;
         bottom: 15px;
-
         font-size: 10px;
     }
 }
