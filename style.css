@@ -163,3 +163,130 @@ h1 {
     font-size: 0.85rem;
   }
 }
+
+/* ===================================
+   学校案内（自己紹介ページ）用スタイル
+   =================================== */
+
+.header-link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 15px 60px;
+  min-height: 80vh;
+}
+
+/* 身上書風カード（トップページと同じ薄い灰色） */
+.profile-card {
+  width: 100%;
+  max-width: 650px;
+  background-color: #e8e8e8;
+  color: #1c355e;
+  padding: 35px 25px;
+  border-radius: 6px;
+  box-shadow: -6px 6px 0px #b8b8b8, -12px 12px 20px rgba(0, 0, 0, 0.4);
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: normal;
+  text-align: center;
+  letter-spacing: 0.15em;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #1c355e;
+  margin-bottom: 25px;
+}
+
+/* 項目リストの配置 */
+.profile-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.profile-group {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px dashed rgba(28, 53, 94, 0.25);
+  padding-bottom: 10px;
+}
+
+.profile-group dt {
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #1c355e;
+  margin-bottom: 4px;
+}
+
+.profile-group dd {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* リンク付きリスト */
+.link-list {
+  list-style: disc;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.link-list a {
+  color: #1c355e;
+  font-weight: bold;
+  text-decoration: underline;
+  transition: opacity 0.2s;
+}
+
+.link-list a:hover {
+  opacity: 0.6;
+}
+
+/* 戻るボタン */
+.back-nav {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.back-nav a {
+  color: #1c355e;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  border: 1px solid #1c355e;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.back-nav a:hover {
+  background-color: #1c355e;
+  color: #e8e8e8;
+}
+
+/* PC向けレイアウト（横並びで整列） */
+@media (min-width: 768px) {
+  .profile-card {
+    padding: 50px 45px;
+  }
+
+  .profile-group {
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  .profile-group dt {
+    width: 140px;
+    flex-shrink: 0;
+  }
+
+  .profile-group dd {
+    flex-grow: 1;
+  }
+}
