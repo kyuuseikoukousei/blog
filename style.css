@@ -39,13 +39,14 @@ body {
 
 .book {
     position: absolute;
+
     z-index: 1;
 
-    left: 8vw;
-    top: 12vh;
+    left: 18vw;
+    top: 8vh;
 
-    width: 125vw;
-    height: 105vh;
+    width: 115vw;
+    height: 92vh;
 }
 
 
@@ -57,19 +58,18 @@ body {
     left: 0;
     top: 0;
 
-    width: 70%;
+    width: 58%;
     height: 100%;
 
     background: #d9d9d9;
 
     clip-path: polygon(
-        43% 5%,
+        45% 5%,
         100% 0%,
-        100% 100%,
-        31% 86%,
-        26% 72%,
-        24% 50%,
-        25% 30%
+        95% 100%,
+        18% 78%,
+        8% 67%,
+        34% 45%
     );
 }
 
@@ -79,21 +79,21 @@ body {
 .page-right {
     position: absolute;
 
-    left: 43%;
+    left: 42%;
     top: 0;
 
-    width: 82%;
+    width: 65%;
     height: 100%;
 
     background: #d9d9d9;
 
     clip-path: polygon(
         0% 0%,
-        73% 3%,
-        100% 15%,
-        100% 100%,
-        30% 100%,
-        10% 60%
+        72% 4%,
+        100% 17%,
+        100% 78%,
+        23% 100%,
+        8% 58%
     );
 }
 
@@ -105,86 +105,16 @@ body {
 
     z-index: 3;
 
-    left: 43%;
+    left: 42%;
+
     top: 3%;
 
     width: 4px;
-    height: 97%;
+    height: 96%;
 
     background: #29447d;
 
-    transform: rotate(2deg);
-}
-
-
-/* =========================
-   左ページ
-   ========================= */
-
-.page-left {
-    position: absolute;
-
-    left: 0;
-    top: 0;
-
-    width: 50%;
-    height: 100%;
-
-    background: #d9d9d9;
-
-    clip-path: polygon(
-        0% 8%,
-        96% 0%,
-        100% 96%,
-        12% 78%,
-        4% 65%
-    );
-}
-
-
-/* =========================
-   右ページ
-   ========================= */
-
-.page-right {
-    position: absolute;
-
-    right: 0;
-    top: 0;
-
-    width: 50%;
-    height: 100%;
-
-    background: #d9d9d9;
-
-    clip-path: polygon(
-        4% 0%,
-        100% 8%,
-        100% 72%,
-        88% 82%,
-        0% 100%
-    );
-}
-
-
-/* =========================
-   本の中央・折り目
-   ========================= */
-
-.spine {
-    position: absolute;
-
-    z-index: 3;
-
-    left: 50%;
-    top: 1%;
-
-    width: 4px;
-    height: 98%;
-
-    background: #29447d;
-
-    transform: rotate(0deg);
+    transform: rotate(-2deg);
 }
 
 
@@ -207,6 +137,7 @@ body {
     margin: 0;
 
     font-size: 28px;
+
     letter-spacing: 0.15em;
 }
 
@@ -214,6 +145,7 @@ body {
     margin: 5px 0 0;
 
     font-size: 66px;
+
     font-weight: normal;
 
     line-height: 1.1;
@@ -225,6 +157,7 @@ body {
     font-family: Georgia, serif;
 
     font-size: 16px;
+
     letter-spacing: 0.18em;
 }
 
@@ -245,6 +178,8 @@ nav a {
     color: #29447d;
 
     text-decoration: none;
+
+    transition: opacity 0.2s ease;
 }
 
 nav a:visited {
@@ -253,6 +188,7 @@ nav a:visited {
 
 nav a:hover {
     color: #29447d;
+
     opacity: 0.55;
 }
 
@@ -276,6 +212,7 @@ nav a:hover {
     display: block;
 
     font-size: 42px;
+
     font-weight: normal;
 
     line-height: 1.15;
