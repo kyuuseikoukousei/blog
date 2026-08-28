@@ -369,3 +369,73 @@ h1 {
   font-style: italic;
   font-size: 0.93rem;
 }
+
+/* ===================================
+   図書室（読書記録ページ）用スタイル
+   =================================== */
+
+.library-card {
+  max-width: 700px;
+}
+
+.book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* 1冊ごとの外枠（蔵書カード風） */
+.book-item {
+  background-color: rgba(28, 53, 94, 0.04);
+  border: 1px dashed rgba(28, 53, 94, 0.3);
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.book-header {
+  border-bottom: 1px solid rgba(28, 53, 94, 0.15);
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.book-date {
+  font-size: 0.8rem;
+  opacity: 0.75;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.book-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1c355e;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.book-author {
+  font-size: 0.88rem;
+  opacity: 0.85;
+}
+
+.book-content {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 心に残った引用枠 */
+.book-quote {
+  background-color: rgba(28, 53, 94, 0.06);
+  border-left: 3px solid #1c355e;
+  padding: 10px 14px;
+  font-style: italic;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.book-review {
+  color: #1c355e;
+}
